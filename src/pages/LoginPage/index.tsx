@@ -22,7 +22,7 @@ const LoginPage: React.FC = () => {
           </ContainerLogin>
           <div className="container-logo">
             <h2 className="text-logo">Cred</h2>
-            <GiStoneBlock className="logo" />
+               <GiStoneBlock className="logo" />
             <h2 className="text-logo">Rock</h2>
           </div>
       </Container>

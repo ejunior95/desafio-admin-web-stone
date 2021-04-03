@@ -27,7 +27,7 @@ export const ContainerLogin = styled.div`
   background-color: #30363D;
   border-radius: 10px;
   min-width: 40%;
-  min-height: 50%;
+  min-height: 55%;
   .container-textos {
     padding-top: 5%;
   }
@@ -35,6 +35,7 @@ export const ContainerLogin = styled.div`
   .subtitulo-login {
       color: #ffffff;
       text-align: center;
+      padding-bottom: 2%;
   }
   .container-inputs {
     width: 80%;
