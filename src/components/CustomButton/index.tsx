@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import { Container } from './styles';
 
-const CustomButton: React.FC = () => {
+interface IProps {
+  type?: 'button' | 'submit' | 'reset';
+  text: string
+}
+
+const CustomButton: React.FC<IProps> = (props:IProps) => {
+
+  const {
+    type,
+    text
+  } = props
+
   return (
       <Container>
-          
+          <button type={type}>{text}</button>
       </Container>
   );
 }

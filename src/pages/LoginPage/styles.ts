@@ -12,11 +12,13 @@ export const ContainerLogin = styled.div`
   border-radius: 10px;
   min-width: 40%;
   min-height: 50%;
+  .container-textos {
+    padding-top: 5%;
+  }
   .titulo-login,
   .subtitulo-login {
       color: #ffffff;
       text-align: center;
-      padding-top: 1%;
   }
   .container-inputs {
     width: 80%;
@@ -26,5 +28,11 @@ export const ContainerLogin = styled.div`
     justify-content: center;
     padding-top: 5vh;
     padding-bottom: 2vh;
+  }
+  .container-button {
+    width: 100%;
+    padding-top: 2vh;
+    display: flex;
+    justify-content: center;
   }
 `;
