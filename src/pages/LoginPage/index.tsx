@@ -3,6 +3,7 @@ import { Container, ContainerLogin } from './styles';
 import InputBox from '../../components/InputBox';
 import CustomButton from '../../components/CustomButton';
 import { GiStoneBlock } from "react-icons/gi";
+import { Link } from 'react-router-dom';
 
 const LoginPage: React.FC = () => {
   return(
@@ -17,7 +18,9 @@ const LoginPage: React.FC = () => {
                 <InputBox type="password" placeholder="Digite sua senha aqui..." />
               </div>
               <div className="container-button">
+              <Link to="/home">
                 <CustomButton type="submit" text="Entrar" />
+              </Link>
               </div>
           </ContainerLogin>
           <div className="container-logo">

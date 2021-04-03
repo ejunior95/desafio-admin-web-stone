@@ -29,7 +29,16 @@ export const ContainerLogin = styled.div`
   min-width: 40%;
   min-height: 55%;
   .container-textos {
+    margin-left: 10%;
+    box-sizing: border-box;
+    width: 80%;
     padding-top: 5%;
+  }
+  .titulo-login {
+
+  }
+  .subtitulo-login {
+    
   }
   .titulo-login,
   .subtitulo-login {
@@ -39,7 +48,7 @@ export const ContainerLogin = styled.div`
   }
   .container-inputs {
     width: 80%;
-    margin-left: 15%;
+    margin-left: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
