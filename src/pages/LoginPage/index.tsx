@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, ContainerLogin } from './styles';
 import InputBox from '../../components/InputBox';
 import CustomButton from '../../components/CustomButton';
+import { GiStoneBlock } from "react-icons/gi";
 
 const LoginPage: React.FC = () => {
   return(
@@ -19,6 +20,11 @@ const LoginPage: React.FC = () => {
                 <CustomButton type="submit" text="Entrar" />
               </div>
           </ContainerLogin>
+          <div className="container-logo">
+            <h2 className="text-logo">Cred</h2>
+            <GiStoneBlock className="logo" />
+            <h2 className="text-logo">Rock</h2>
+          </div>
       </Container>
   );
 }
