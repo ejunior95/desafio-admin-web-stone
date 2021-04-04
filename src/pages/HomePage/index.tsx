@@ -5,6 +5,8 @@ import { FiUsers } from "react-icons/fi";
 import { BsCreditCard } from "react-icons/bs";
 import { AiOutlineAudit } from "react-icons/ai";
 import { MdDashboard } from "react-icons/md";
+import { MdClose } from "react-icons/md";
+import { FiMenu } from "react-icons/fi";
 
 const HomePage: React.FC = () => {
   return(
@@ -15,6 +17,9 @@ const HomePage: React.FC = () => {
               <h2 className="text-logo">Cred</h2>
                 <GiStoneBlock className="logo" />
               <h2 className="text-logo">Rock</h2>
+              <div className="botao-expandir-retrai-menu">
+              <MdClose  className="botao-expandir-retrai-menu-icone"/>
+              </div>
             </div>
             <ul>
               <li className="active"><MdDashboard /> Página inicial</li>
