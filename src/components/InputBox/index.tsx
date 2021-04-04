@@ -15,7 +15,7 @@ const InputBox: React.FC<IProps> = (props:IProps) => {
 
   return(
       <Container>
-          <input type={type} placeholder={placeholder} />
+          <input type={type} placeholder={placeholder} required={true} />
       </Container>
   );
 }

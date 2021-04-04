@@ -10,7 +10,7 @@ const LoginPage: React.FC = () => {
       <Container>
           <ContainerLogin>
             <div className="container-textos">
-              <h1 className="titulo-login">Olá auditor!</h1>
+              <h1 className="titulo-login">Olá analista!</h1>
               <p className="subtitulo-login">Digite seu login e senha abaixo para prosseguir</p>
             </div>
               <div className="container-inputs">
