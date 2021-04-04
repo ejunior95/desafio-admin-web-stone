@@ -1,25 +1,16 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  height: 100vh;
-`;
-export const Header = styled.div`
-background-color: #ffffff;
-display:flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
-
 @media(min-width: 1025px) {
-  height: 100%;
-  width: 44vh;
-  .container-logo {
+    .container-topo {
+    position: fixed;
+    left: 3%;
+    top: 1%;
     height: 20%;
-    padding-top: 2%;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    z-index: 1;
   }
   .logo {
     font-size: 50px;
@@ -35,13 +26,67 @@ justify-content: space-between;
   .botao-expandir-retrai-menu-icone {
     display: none;
   }
+  }
+  @media(max-width: 1024px) {
+
+    .container-topo {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position:absolute;
+    top: 3%;
+    z-index: 1;
+  }
+  .logo {
+    font-size: 50px;
+    color: #000000;
+  }
+  .text-logo {
+    color: #000000;
+    padding: 10px;
+  }
+  .botao-expandir-retrai-menu {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    border-radius: 50%;
+    border: 1px solid #000000;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    padding: 5px;
+    cursor: pointer;
+  }
+  .botao-expandir-retrai-menu-icone {
+    font-size: 25px;
+    display:flex;
+
+  }
+  }
+`;
+
+export const Header = styled.div`
+background-color: #ffffff;
+display:flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+
+@media(min-width: 1025px) {
+  height: 100%;
+  width: 45vh;
+  position: fixed;
   ul {
+      padding-top: 50%;
       display: flex;
       flex-direction: column;
       align-items: left;
       justify-content: space-around;
       height: 50%;
       width: 100%;
+      text-decoration: none;
   }
   ul li {
     width: 100%;
@@ -50,6 +95,10 @@ justify-content: space-between;
     border: 2px solid transparent;
     cursor: pointer;
     list-style: none;
+    text-decoration: none;
+  }
+  ul li.link {
+    text-decoration: none;
   }
   ul li.active {
     width: 100%;
@@ -73,55 +122,29 @@ justify-content: space-between;
   .copyright {
     text-align: center;
     width: 100%;
-    font-size: 10px;
+    font-size: 11px;
   }
   .logo-copyright {
-    font-size: 10px;
+    font-size: 11px;
+    color: #FF0000;
   }
 }
 @media(max-width: 1024px) {
   height: 100%;
   width: 100%;
+  position: fixed;
 
-  .container-logo {
-    height: 10%;
-    padding-top: 2%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-  }
-  .logo {
-    font-size: 50px;
-    color: #000000;
-  }
-  .text-logo {
-    color: #000000;
-    padding: 10px;
-  }
-  .botao-expandir-retrai-menu {
-    border-radius: 50%;
-    border: 1px solid #000000;
-    display:flex;
-    align-items: center;
-    justify-content:center;
-    padding: 5px;
-    cursor: pointer;
-  }
-  .botao-expandir-retrai-menu-icone {
-    font-size: 25px;
-    display:flex;
-
-  }
   ul {
       display: flex;
       flex-direction: column;
       align-items: left;
       justify-content: space-around;
       height: 50%;
-      padding-left: 1vh;
+      position: absolute;
+      left: 3%;
+      top: 30%;
       width: 95%;
+      text-decoration: none;
   }
   ul li {
     padding: 1vh;
@@ -129,6 +152,10 @@ justify-content: space-between;
     border: 2px solid transparent;
     cursor: pointer;
     list-style: none;
+    text-decoration: none;
+  }
+  ul li.link {
+    text-decoration: none;
   }
   ul li.active {
     width: 95%;
@@ -147,16 +174,19 @@ justify-content: space-between;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom:0;
     width: 100%;
     height: 10%;
   }
   .copyright {
     text-align: center;
     width: 100%;
-    font-size: 10px;
+    font-size: 11px;
   }
   .logo-copyright {
-    font-size: 10px;
+    font-size: 11px;
+    color: #FF0000;
   }
   
 }
