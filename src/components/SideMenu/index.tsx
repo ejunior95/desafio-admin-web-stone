@@ -10,9 +10,27 @@ import { MdDashboard } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
+import { IoMdExit } from "react-icons/io";
 
 
-const SideMenu: React.FC = () => {
+interface IProps {
+  classNameItem1: 'active' | 'inactive';
+  classNameItem2: 'active' | 'inactive';
+  classNameItem3: 'active' | 'inactive';
+  classNameItem4: 'active' | 'inactive';
+  classNameItem5: 'active' | 'inactive';
+}
+
+const SideMenu: React.FC<IProps> = (props:IProps) => {
+
+  const {
+    classNameItem1,
+    classNameItem2,
+    classNameItem3,
+    classNameItem4,
+    classNameItem5,
+  } = props
+
   return(
       <Container>
             
@@ -32,20 +50,22 @@ const SideMenu: React.FC = () => {
 
             <ul>
               
-              <li className="active"><MdDashboard /> Página inicial</li>
+              <Link to="/home" className="link">
+              <li className={classNameItem1}><MdDashboard /> Página inicial</li>
+              </Link>
               <Link to="/users" className="link">
-                <li className="inactive"><RiGroupLine /> Visualizar usuários</li>
+                <li className={classNameItem2}><RiGroupLine /> Visualizar usuários</li>
               </Link>
               <Link to="/analysts" className="link">
-                <li className="inactive"><RiUserSettingsLine /> Visualizar analistas</li>
+                <li className={classNameItem3}><RiUserSettingsLine /> Visualizar analistas</li>
               </Link>
               <Link to="/cards" className="link">
-                <li className="inactive"><BsCreditCard /> Visualizar cartões disponiveis</li>
+                <li className={classNameItem4}><BsCreditCard /> Visualizar cartões disponiveis</li>
               </Link>
               <Link to ="/audits" className="link">
-                <li className="inactive"><AiOutlineAudit /> Visualizar auditoria </li>
+                <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditoria </li>
               </Link>
-
+                <li className="inactive"><IoMdExit /> Encerrar sessão </li>
             </ul>
             <div className="container-copyright">
                 <p className="copyright">Desenvolvido com <FaHeart className="logo-copyright" /> por Edvaldo de Ramos Junior</p>
