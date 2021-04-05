@@ -14,7 +14,7 @@ const LoginPage: React.FC = () => {
               <p className="subtitulo-login">Digite seu login e senha abaixo para prosseguir</p>
             </div>
               <div className="container-inputs">
-                <InputBox type="text" placeholder="Digite o seu email aqui..." />
+                <InputBox type="email" placeholder="Digite o seu email aqui..." />
                 <InputBox type="password" placeholder="Digite sua senha aqui..." />
               </div>
               <div className="container-button">
