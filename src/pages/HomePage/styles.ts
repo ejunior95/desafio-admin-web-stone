@@ -3,12 +3,16 @@ import bg_01 from '../../assets/bg_001.jpg';
 
 export const Container = styled.div`
   .conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     position: absolute;
     right: 0;
     top: 0;
     width: 75%;
     margin-top: 2%;
-    height: 100vh;
+    height: 90vh;
     z-index: -1;
   }
   .bloco-user-info {
@@ -17,7 +21,6 @@ export const Container = styled.div`
     justify-content: flex-end;
     width: 95%;
     height: 30%;
-    padding-right: 10px;
     border-radius: 10px;
     margin-bottom: 5%;
     background-image: url(${bg_01});
@@ -29,6 +32,7 @@ export const Container = styled.div`
   .logo-user {
     font-size: 500%;
     color: #ffffff;
+    margin-right: 20px;
   }
   .container-info-user {
     text-align: right;
@@ -51,14 +55,10 @@ export const Container = styled.div`
   }
   .roles.n1{
     background-color: #238636;
-    margin-right: 5px;
+    margin-right: 10px;
   }
   .roles.n2{
     background-color: #FF0000;
-  }
-  .roles.n1{
-    background-color: #238636;
-    margin-right: 5px;
   }
   .roles.n1.inactive,
   .roles.n2.inactive {

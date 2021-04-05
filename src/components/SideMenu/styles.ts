@@ -52,17 +52,16 @@ export const Container = styled.div`
     right: 5%;
     top: 25%;
     border-radius: 50%;
-    border: 1px solid #000000;
+    border: 2px solid #000000;
     display:flex;
     align-items: center;
     justify-content:center;
-    padding: 5px;
+    padding: 10px;
     cursor: pointer;
   }
   .botao-expandir-retrai-menu-icone {
-    font-size: 25px;
+    font-size: 20px;
     display:flex;
-
   }
   }
 `;

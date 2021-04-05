@@ -47,7 +47,6 @@ const SideMenu: React.FC<IProps> = (props:IProps) => {
             </div>
 
           <Header>
-
             <ul>
               
               <Link to="/home" className="link">
@@ -65,8 +64,12 @@ const SideMenu: React.FC<IProps> = (props:IProps) => {
               <Link to ="/audits" className="link">
                 <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditoria </li>
               </Link>
+              <Link to="/login" className="link">
                 <li className="inactive"><IoMdExit /> Encerrar sessão </li>
+              </Link>
+            
             </ul>
+            
             <div className="container-copyright">
                 <p className="copyright">Desenvolvido com <FaHeart className="logo-copyright" /> por Edvaldo de Ramos Junior</p>
             </div>
