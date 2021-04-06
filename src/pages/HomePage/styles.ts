@@ -32,13 +32,27 @@ export const Container = styled.div`
   }
   .bloco-detalhes-info{
     display: flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
+
     height: 75%;
     width: 100%;
     border: 1px solid #30363D;
     border-radius: 10px;
+  }
+  .bloco-info-users {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-users {
+    font-size: 150px;
+    color: #ffffff;
+    margin-right: 5px;
+  }
+  .container-detalhes-users{
+    text-align: right;
+    color: #ffffff;
   }
   .titulo-info{
     margin-left: 2%;

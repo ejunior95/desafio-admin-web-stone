@@ -12,19 +12,6 @@ import Audits from './pages/AuditPage';
 import Analysts from './pages/AnalystsPage';
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const url =
-    process.env.NODE_ENV === "production"
-      ? "/api"
-      : "http://localhost:3001/api";
-
-  useEffect(() => {
-    fetch(`${url}/users`)
-      .then(function (response) {
-        return response.json();
-      })
-      .then(setUsers);
-  }, [url]);
 
   return(
 
@@ -55,7 +42,6 @@ function App() {
       </Router>
           
     );
-    {/* <p>{JSON.stringify(users)}</p> */}
 }
 
 export default App;
