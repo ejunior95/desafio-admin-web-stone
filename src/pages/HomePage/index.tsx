@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
-import SideMenu from '../../components/SideMenu';
 import { FaUserCircle } from "react-icons/fa";
+import SideMenu from '../../components/SideMenu';
 import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
@@ -28,6 +28,13 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
                 <FaUserCircle className="logo-user" />
+              </div>
+
+              <div className="bloco-detalhes-info">
+                <div className="bloco-info-users">
+                  
+                </div>  
+
               </div>
             
             </div>

@@ -34,12 +34,6 @@ export const ContainerLogin = styled.div`
     width: 80%;
     padding-top: 5%;
   }
-  .titulo-login {
-
-  }
-  .subtitulo-login {
-    
-  }
   .titulo-login,
   .subtitulo-login {
       color: #ffffff;

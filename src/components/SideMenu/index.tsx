@@ -53,16 +53,16 @@ const SideMenu: React.FC<IProps> = (props:IProps) => {
               <li className={classNameItem1}><MdDashboard /> Página inicial</li>
               </Link>
               <Link to="/users" className="link">
-                <li className={classNameItem2}><RiGroupLine /> Visualizar usuários</li>
+                <li className={classNameItem2}><RiGroupLine /> Visualizar base de usuários</li>
               </Link>
               <Link to="/analysts" className="link">
                 <li className={classNameItem3}><RiUserSettingsLine /> Visualizar analistas</li>
               </Link>
               <Link to="/cards" className="link">
-                <li className={classNameItem4}><BsCreditCard /> Visualizar cartões disponiveis</li>
+                <li className={classNameItem4}><BsCreditCard /> Visualizar pedidos de cartão</li>
               </Link>
               <Link to ="/audits" className="link">
-                <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditoria </li>
+                <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditorias </li>
               </Link>
               <Link to="/login" className="link">
                 <li className="inactive"><IoMdExit /> Encerrar sessão </li>

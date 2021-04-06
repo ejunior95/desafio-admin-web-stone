@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import bg_01 from '../../assets/bg_001.jpg';
+import bg_01 from '../../assets/bg_001.png';
 
 export const Container = styled.div`
   .conteudo {
@@ -10,8 +10,9 @@ export const Container = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    width: 75%;
+    width: 70%;
     margin-top: 2%;
+    margin-right: 2%;
     height: 90vh;
     z-index: -1;
   }
@@ -19,15 +20,29 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 95%;
+    width: 100%;
     height: 30%;
     border-radius: 10px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
     background-image: url(${bg_01});
     background-attachment: fixed;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .bloco-detalhes-info{
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-start;
+    height: 75%;
+    width: 100%;
+    border: 1px solid #30363D;
+    border-radius: 10px;
+  }
+  .titulo-info{
+    margin-left: 2%;
+    color: #ffffff;
   }
   .logo-user {
     font-size: 500%;
