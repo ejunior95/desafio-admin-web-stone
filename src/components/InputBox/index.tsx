@@ -3,19 +3,23 @@ import { Container } from './styles';
 
 interface IProps {
   placeholder: string;
-  type: string
+  type: string;
+  value: string;
+  onChange: (e: string) => void
 }
 
 const InputBox: React.FC<IProps> = (props:IProps) => {
   
   const {
     placeholder,
-    type
+    type,
+    value,
+    onChange
   } = props
 
   return(
       <Container>
-          <input type={type} placeholder={placeholder} required={true} />
+          <input type={type} placeholder={placeholder} required={true} value={value} onChange={e => onChange(e.target.value)} />
       </Container>
   );
 }

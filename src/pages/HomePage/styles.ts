@@ -30,9 +30,8 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .bloco-detalhes-info{
+  .bloco-detalhes-info {
     display: flex;
-
     height: 75%;
     width: 100%;
     border: 1px solid #30363D;
@@ -45,9 +44,25 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
   }
+  .container-detalhes-users h1 {
+    font-size: 50px;
+  }
+  .bloco-info-analysts {
+    width: 60%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
   .logo-users {
     font-size: 150px;
     color: #ffffff;
+    margin-right: 5px;
+  }
+  .logo-analysts {
+    font-size: 70px;
+    color: #ffffff;
+    margin-left: 5px;
     margin-right: 5px;
   }
   .container-detalhes-users{

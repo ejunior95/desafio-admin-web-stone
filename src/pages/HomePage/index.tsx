@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from './styles';
 import { FaUserCircle } from "react-icons/fa";
 import { RiGroupLine } from "react-icons/ri";
+import { RiUserSettingsLine } from "react-icons/ri";
 import SideMenu from '../../components/SideMenu';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ const HomePage: React.FC = () => {
               </div>
 
               <div className="bloco-detalhes-info">
+                
                 <div className="bloco-info-users">
                   <RiGroupLine className="logo-users" />
                   <div className="container-detalhes-users">
@@ -41,6 +43,10 @@ const HomePage: React.FC = () => {
                       <span>Verificados: 10</span>
                   </div>
                 </div>  
+
+              <div className="bloco-info-analysts">
+                  <RiUserSettingsLine className="logo-analysts" />
+              </div>
 
               </div>
             

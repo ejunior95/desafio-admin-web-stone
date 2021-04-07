@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Header} from './styles';
 import { GiStoneBlock } from "react-icons/gi";
@@ -11,7 +11,7 @@ import { MdClose } from "react-icons/md";
 import { FiMenu } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
-
+import { AnalystContext } from '../../context/AnalystContext';
 
 interface IProps {
   classNameItem1: 'active' | 'inactive';
@@ -20,8 +20,9 @@ interface IProps {
   classNameItem4: 'active' | 'inactive';
   classNameItem5: 'active' | 'inactive';
 }
-
 const SideMenu: React.FC<IProps> = (props:IProps) => {
+
+  const {encerrarSessao} = useContext(AnalystContext);
 
   const {
     classNameItem1,
@@ -64,7 +65,7 @@ const SideMenu: React.FC<IProps> = (props:IProps) => {
               <Link to ="/audits" className="link">
                 <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditorias </li>
               </Link>
-              <Link to="/login" className="link">
+              <Link to="/login" className="link" onClick={encerrarSessao}>
                 <li className="inactive"><IoMdExit /> Encerrar sessão </li>
               </Link>
             
