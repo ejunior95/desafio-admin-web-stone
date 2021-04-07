@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Container } from './styles';
 import { FaUserCircle } from "react-icons/fa";
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
 import SideMenu from '../../components/SideMenu';
+import { AnalystContext } from '../../context/AnalystContext';
 import { Link } from 'react-router-dom';
 
 const HomePage: React.FC = () => {
+
+  const { analystLogado, permissoes } = useContext(AnalystContext);
+
   return(
       <Container>
         
@@ -22,11 +26,11 @@ const HomePage: React.FC = () => {
           
               <div className="bloco-user-info">
                 <div className="container-info-user">
-                  <h1>User 1</h1>
-                  <span>admin0@gmail.com</span>
+                  <h1>{analystLogado.nome_user}</h1>
+                  <span>{analystLogado.email}</span>
                   <div className="container-roles">
-                    <span className="roles n1" title="Role N1">N1</span>
-                    <span className="roles n2" title="Role N2">N2</span>
+                    {permissoes.n1 && <span className="roles n1" title="Role N1">N1</span>}
+                    {permissoes.n2 && <span className="roles n2" title="Role N2">N2</span>}
                   </div>
                 </div>
                 <FaUserCircle className="logo-user" />

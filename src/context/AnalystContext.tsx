@@ -20,6 +20,10 @@ import {createContext, ReactNode, useState} from 'react';
     validarLogin: (email:string, senha:string) => void;
     analystLogado: IAnalyst;
     isLogado: boolean;
+    permissoes: {
+      n1: boolean;
+      n2: boolean
+    };
     encerrarSessao: () => void
   }
   
@@ -92,6 +96,10 @@ export function AnalystProvider({
           validarLogin,
           analystLogado,
           isLogado : Object.keys(analystLogado).length > 0,
+          permissoes: {
+            n1 : analystLogado.roles?.filter(role => role === 'n1').length > 0,
+            n2 : analystLogado.roles?.filter(role => role === 'n2').length > 0,
+          },
           encerrarSessao
       }}> 
       {children}
