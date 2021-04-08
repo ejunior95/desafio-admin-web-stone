@@ -1,15 +1,47 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Container } from './styles';
 import { FaUserCircle } from "react-icons/fa";
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
-import SideMenu from '../../components/SideMenu';
 import { AnalystContext } from '../../context/AnalystContext';
-import { Link } from 'react-router-dom';
+import SideMenu from '../../components/SideMenu';
+import axios from 'axios';
+
+  interface IUsers {
+    enabledFeatures: number[];
+    metadatas: {
+        validDocument: boolean,
+        verified: boolean
+        }
+      }
+
+  interface IUsersInfo {
+    total: number,
+    documentosValidados: number;
+    verificados: number
+  }
 
 const HomePage: React.FC = () => {
 
   const { analystLogado, permissoes } = useContext(AnalystContext);
+  const [usersInfo,setUsersInfo] = useState({} as IUsersInfo)
+
+
+
+  useEffect(() => {
+    axios.get<IUsers[]>('http://localhost:3001/api/users')
+    .then(res => {
+        const total = res.data.length
+        const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
+        const verificados = res.data.filter(user => user.metadatas.verified).length
+
+        setUsersInfo({
+          total,
+          documentosValidados,
+          verificados
+          })
+        })
+  },[])
 
   return(
       <Container>
@@ -42,9 +74,9 @@ const HomePage: React.FC = () => {
                   <RiGroupLine className="logo-users" />
                   <div className="container-detalhes-users">
                       <h2>Base de usuários</h2>
-                      <h1>15</h1>
-                      <span>Documentos validados: 05</span><br />
-                      <span>Verificados: 10</span>
+                      <h1>{usersInfo.total}</h1>
+                      <span>Documentos validados: {usersInfo.documentosValidados}</span><br />
+                      <span>Verificados: {usersInfo.verificados}</span>
                   </div>
                 </div>  
 
