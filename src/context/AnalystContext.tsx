@@ -1,6 +1,7 @@
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useContext } from 'react';
 import {createContext, ReactNode, useState} from 'react';
+import { ToastContext } from './ToastContext';
   
   interface IUser {
     id: number;
@@ -38,7 +39,7 @@ export function AnalystProvider({
   }: IProviderProps) {
     
   const [analystLogado, setAnalystLogado] = useState({} as IAnalyst)
-
+  const { showToastMessage } = useContext(ToastContext);
 
   const url =
   process.env.NODE_ENV === "production"
@@ -66,8 +67,9 @@ export function AnalystProvider({
         try {
            res = await axios.get<IAnalyst[]>(`${url}/analysts`)
           } catch (error) {
-            alert('Não deu certo!')
-            return
+            showToastMessage('erro',"Erro na comunicação com o servidor!")
+            //<ToastMessage type={'erro'} text={"Não foi possível realizar o login!"} />
+            return 
           }
           
           const analystEncontrado = res.data.filter(analyst => 
@@ -76,8 +78,9 @@ export function AnalystProvider({
         )
         const logado = analystEncontrado[0]
         if (!logado) {
-            alert('Não deu certo!')
-            return
+          showToastMessage('erro',"Não foi possível realizar o login!")
+            return 
+            // <ToastMessage type={'erro'} text={"Não foi possível realizar o login!"} />
         }
         const nome_user = await recuperarNome(logado.user_id)
         const analista = {

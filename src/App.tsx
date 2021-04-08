@@ -1,12 +1,15 @@
 import { AnalystProvider } from './context/AnalystContext'
+import { ToastProvider } from './context/ToastContext';
 import { Routes } from './routes';
 
 function App() {
 
   return(
-    <AnalystProvider>
+    <ToastProvider>
+      <AnalystProvider>
         <Routes />
-    </AnalystProvider>       
+      </AnalystProvider>       
+    </ToastProvider>
     );
 }
 

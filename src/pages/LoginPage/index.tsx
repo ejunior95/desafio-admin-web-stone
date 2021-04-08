@@ -15,7 +15,10 @@ const LoginPage: React.FC = () => {
     function handledSubmit(e:React.FormEvent<HTMLFormElement>) {
       e.preventDefault()
       validarLogin(email,senha)
+      setEmail('')
+      setSenha('')
     }
+
 
   return(
       <Container>
@@ -27,8 +30,8 @@ const LoginPage: React.FC = () => {
 
              <form onSubmit={handledSubmit}>
               <div className="container-inputs">
-                <InputBox type="email" placeholder="Digite o seu email aqui..." value={email} onChange={setEmail} />
-                <InputBox type="password" placeholder="Digite sua senha aqui..." value={senha} onChange={setSenha}  />
+                <InputBox autoFocus type="email" placeholder="Digite o seu email aqui..." value={email} onChange={setEmail} />
+                <InputBox autoFocus={false} type="password" placeholder="Digite sua senha aqui..." value={senha} onChange={setSenha}  />
               </div>
               <div className="container-button">
               
