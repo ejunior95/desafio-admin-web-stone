@@ -15,6 +15,16 @@ import DataGrid from '../../components/DataGrid';
         verified: boolean
         }
       }
+  // interface IAnalysts {
+    
+  //     }
+
+  interface ICardsResponse {
+        nomeUser: string;
+        dataRequisicao: string;
+        verificado: string;
+        status: string
+      }
 
   interface IUsersInfo {
     total: number,
@@ -22,11 +32,19 @@ import DataGrid from '../../components/DataGrid';
     verificados: number
   }
 
+  interface IAnalystsInfo {
+    total: number,
+    totalN1: number;
+    totalN2: number
+  }
+
 const HomePage: React.FC = () => {
 
   const { analystLogado, permissoes } = useContext(AnalystContext);
-  const [usersInfo,setUsersInfo] = useState({} as IUsersInfo)
-
+  const [usersInfo,setUsersInfo] = useState({} as IUsersInfo);
+  const [cardsRequest,setCardRequest] = useState({} as ICardsResponse);
+  // const [cardsInfo,setCardsInfo] = useState({} as ICardInfo);
+  // const [analystsInfo,setAnalystsInfo] = useState({} as IAnalystsInfo);
 
 
   useEffect(() => {
@@ -42,6 +60,16 @@ const HomePage: React.FC = () => {
           verificados
           })
         })
+    //   axios.get<IAnalysts[]>('http://localhost:3001/api/analysts')
+    // .then(res => {
+    //     const total = res.data.length
+    //     const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
+    //     const verificados = res.data.filter(user => user.metadatas.verified).length
+
+    //     setAnalystsInfo({
+          
+    //       })
+    //       
   },[])
 
   return(
@@ -93,7 +121,19 @@ const HomePage: React.FC = () => {
               <div className="bloco-info-cards">
                 <div className="container-grid-cards">
                   <h2 className="titulo">Pedidos de cartão</h2>
-                    <DataGrid />
+                    <DataGrid 
+                    headers={[
+                      'Nome do usuário',
+                      'Data da requisição',
+                      'Verificado',
+                      'Status'
+                    ]} 
+                    rows={[
+                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany'],
+                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany'],
+                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany']
+                    ]}
+                    />
                   </div>
               </div>
               </div>

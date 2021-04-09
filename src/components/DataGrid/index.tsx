@@ -1,34 +1,37 @@
 import React from 'react';
 import { Container } from './styles';
 
-const DataGrid: React.FC = () => {
+interface IProps {
+  headers: string[];
+  rows: string[][];
+}
+
+const DataGrid: React.FC<IProps> = (props) => {
+
+  const {
+    headers,
+    rows
+  } = props
+
   return(
       <Container>
           <table>
                 <tr>
-                  <th>Nome de usuário</th>
-                  <th>Data da requisição</th>
-                  <th>Verificado</th>
-                  <th>Status</th>
+                  { headers.map(header => <th>{header}</th> )}
                 </tr>
-                <tr>
-                  <td>Alfreds Futterkiste</td>
-                  <td>Maria Anders</td>
-                  <td>Germany</td>
-                  <td>Germany</td>
-                </tr>
-                <tr>
-                  <td>Centro comercial Moctezuma</td>
-                  <td>Francisco Chang</td>
-                  <td>Mexico</td>
-                  <td>Mexico</td>
-                </tr>
-                <tr>
-                  <td>Ernst Handel</td>
-                  <td>Roland Mendel</td>
-                  <td>Austria</td>
-                  <td>Austria</td>
-                </tr>
+
+                { rows.map(row =>(
+                  <tr>
+                    {row.map((column,i) => {
+                      if (i > headers.length - 1) return 
+                      return(
+                        <td>{column}</td>
+                      )
+                    })}  
+                  </tr>  
+                ))
+                } 
+
           </table>
       </Container>
   );
