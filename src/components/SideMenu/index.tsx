@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Container, Header} from './styles';
 import { GiStoneBlock } from "react-icons/gi";
 import { RiGroupLine } from "react-icons/ri";
@@ -12,25 +12,14 @@ import { FiMenu } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import { AnalystContext } from '../../context/AnalystContext';
+import { useState } from 'react';
 
-interface IProps {
-  classNameItem1: 'active' | 'inactive';
-  classNameItem2: 'active' | 'inactive';
-  classNameItem3: 'active' | 'inactive';
-  classNameItem4: 'active' | 'inactive';
-  classNameItem5: 'active' | 'inactive';
-}
-const SideMenu: React.FC<IProps> = (props:IProps) => {
+const SideMenu: React.FC = () => {
 
   const {encerrarSessao} = useContext(AnalystContext);
 
-  const {
-    classNameItem1,
-    classNameItem2,
-    classNameItem3,
-    classNameItem4,
-    classNameItem5,
-  } = props
+  const location = useLocation()
+  const path = location.pathname
 
   return(
       <Container>
@@ -51,19 +40,19 @@ const SideMenu: React.FC<IProps> = (props:IProps) => {
             <ul>
               
               <Link to="/home" className="link">
-              <li className={classNameItem1}><MdDashboard /> Página inicial</li>
+              <li className={path === '/home' ? 'active' : 'inactive'}><MdDashboard /> Página inicial</li>
               </Link>
               <Link to="/users" className="link">
-                <li className={classNameItem2}><RiGroupLine /> Visualizar base de usuários</li>
+                <li className={path === '/users' ? 'active' : 'inactive'}><RiGroupLine /> Visualizar base de usuários</li>
               </Link>
               <Link to="/analysts" className="link">
-                <li className={classNameItem3}><RiUserSettingsLine /> Visualizar analistas</li>
+                <li className={path === '/analysts' ? 'active' : 'inactive'}><RiUserSettingsLine /> Visualizar analistas</li>
               </Link>
               <Link to="/cards" className="link">
-                <li className={classNameItem4}><BsCreditCard /> Visualizar pedidos de cartão</li>
+                <li className={path === '/cards' ? 'active' : 'inactive'}><BsCreditCard /> Visualizar pedidos de cartão</li>
               </Link>
               <Link to ="/audits" className="link">
-                <li className={classNameItem5}><AiOutlineAudit /> Visualizar auditorias </li>
+                <li className={path === '/audits' ? 'active' : 'inactive'}><AiOutlineAudit /> Visualizar auditorias </li>
               </Link>
               <Link to="/login" className="link" onClick={encerrarSessao}>
                 <li className="inactive"><IoMdExit /> Encerrar sessão </li>

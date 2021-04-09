@@ -11,6 +11,7 @@ import {
   import Audits from './pages/AuditPage';
   import Analysts from './pages/AnalystsPage';
   import { AnalystContext } from './context/AnalystContext';
+import SideMenu from './components/SideMenu';
 
 export const Routes: React.FC = () => {
 
@@ -30,14 +31,11 @@ export const Routes: React.FC = () => {
   return(
 
     <Router>
+
+       <SideMenu />
+    
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
       <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/login">
         <Home />
       </Route>
       <Route path="/users">
@@ -51,6 +49,9 @@ export const Routes: React.FC = () => {
       </Route>
       <Route path="/analysts">
         <Analysts />
+      </Route>
+      <Route path="/">
+        <Home />
       </Route>
     </Switch>
   </Router>

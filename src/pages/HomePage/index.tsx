@@ -9,6 +9,8 @@ import axios from 'axios';
 import DataGrid from '../../components/DataGrid';
 import { ImCheckmark } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
+import { format, parseISO } from 'date-fns';
+import { useHistory, useLocation } from 'react-router-dom';
 
   interface IUsers {
     id: number;
@@ -44,15 +46,21 @@ import { IoMdCloseCircle } from "react-icons/io";
 
 const HomePage: React.FC = () => {
 
+
   const { analystLogado, permissoes } = useContext(AnalystContext);
   const [usersInfo,setUsersInfo] = useState({} as IUsersInfo);
   const [cards,setCards] = useState([] as ICardsResponse[]);
   // const [cardsInfo,setCardsInfo] = useState({} as ICardInfo);
   // const [analystsInfo,setAnalystsInfo] = useState({} as IAnalystsInfo);
 
-
+  const history = useHistory()
+  const location = useLocation()
   useEffect(() => {
     
+    // Redireciona o usuário para a página, caso haja um erro na digitação da url
+ 
+    if (location.pathname !== '/home') history.push('/home')
+
     axios.get<ICardsResponse[]>('http://localhost:3001/api/cards')
     .then(resCards => {
 
@@ -87,21 +95,13 @@ const HomePage: React.FC = () => {
   .map(card => 
       [
       card.metadatas.name,
-      card.createdAt,
+      format(parseISO(card.createdAt),'dd/MM/yy - HH:mm'),
       (card.verificado ? <ImCheckmark /> : <IoMdCloseCircle /> ),
       card.status
       ])
 
   return(
       <Container>
-        
-          <SideMenu
-          classNameItem1="active"
-          classNameItem2="inactive"
-          classNameItem3="inactive"
-          classNameItem4="inactive"
-          classNameItem5="inactive"
-          />
 
             <div className="conteudo">
           

@@ -6,13 +6,6 @@ const CardsPage: React.FC = () => {
   return (
       <Container>
           
-          <SideMenu
-          classNameItem1="inactive"
-          classNameItem2="inactive"
-          classNameItem3="inactive"
-          classNameItem4="active"
-          classNameItem5="inactive"
-          />
 
       </Container>
   );
