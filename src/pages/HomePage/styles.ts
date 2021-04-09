@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import bg_01 from '../../assets/bg_001.png';
 
 export const Container = styled.div`
+  .titulo {
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
   .conteudo {
     display: flex;
     flex-direction: column;
@@ -30,8 +34,10 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
   }
+  
   .bloco-detalhes-info {
     display: flex;
+    flex-wrap: wrap;
     height: 75%;
     width: 100%;
     border: 1px solid #30363D;
@@ -54,19 +60,27 @@ export const Container = styled.div`
     align-items: center;
     justify-content: flex-start;
   }
+  .bloco-info-cards {
+    width: 100%;
+    height: 50%;
+  }
+  .container-grid-cards {
+    width: 80%;
+    margin-left: 10%;
+  }
   .logo-users {
     font-size: 150px;
     color: #ffffff;
     margin-right: 5px;
   }
   .logo-analysts {
-    font-size: 70px;
+    font-size: 150px;
     color: #ffffff;
     margin-left: 5px;
     margin-right: 5px;
   }
   .container-detalhes-users{
-    text-align: right;
+    text-align: left;
     color: #ffffff;
   }
   .titulo-info{

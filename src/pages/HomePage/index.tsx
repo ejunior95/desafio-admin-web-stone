@@ -6,6 +6,7 @@ import { RiUserSettingsLine } from "react-icons/ri";
 import { AnalystContext } from '../../context/AnalystContext';
 import SideMenu from '../../components/SideMenu';
 import axios from 'axios';
+import DataGrid from '../../components/DataGrid';
 
   interface IUsers {
     enabledFeatures: number[];
@@ -82,11 +83,22 @@ const HomePage: React.FC = () => {
 
               <div className="bloco-info-analysts">
                   <RiUserSettingsLine className="logo-analysts" />
+                  <div className="container-detalhes-users">
+                      <h2>Analistas</h2>
+                      <h1>03</h1>
+                      <span>Nivel de acesso N1: 2</span><br />
+                      <span>Nivel de acesso N2: 2</span>
+                  </div>
               </div>
-
+              <div className="bloco-info-cards">
+                <div className="container-grid-cards">
+                  <h2 className="titulo">Pedidos de cartão</h2>
+                    <DataGrid />
+                  </div>
               </div>
-            
+              </div>
             </div>
+
       </Container>
   );
 }
