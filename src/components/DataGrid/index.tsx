@@ -3,7 +3,7 @@ import { Container } from './styles';
 
 interface IProps {
   headers: string[];
-  rows: string[][];
+  rows:  (string | JSX.Element)[][];
 }
 
 const DataGrid: React.FC<IProps> = (props) => {

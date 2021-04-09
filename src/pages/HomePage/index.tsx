@@ -7,8 +7,11 @@ import { AnalystContext } from '../../context/AnalystContext';
 import SideMenu from '../../components/SideMenu';
 import axios from 'axios';
 import DataGrid from '../../components/DataGrid';
+import { ImCheckmark } from "react-icons/im";
+import { IoMdCloseCircle } from "react-icons/io";
 
   interface IUsers {
+    id: number;
     enabledFeatures: number[];
     metadatas: {
         validDocument: boolean,
@@ -20,10 +23,11 @@ import DataGrid from '../../components/DataGrid';
   //     }
 
   interface ICardsResponse {
-        nomeUser: string;
-        dataRequisicao: string;
-        verificado: string;
-        status: string
+        metadatas: { name: string;};
+        createdAt: string;
+        verificado?: boolean;
+        status: string;
+        user_id: number
       }
 
   interface IUsersInfo {
@@ -42,35 +46,51 @@ const HomePage: React.FC = () => {
 
   const { analystLogado, permissoes } = useContext(AnalystContext);
   const [usersInfo,setUsersInfo] = useState({} as IUsersInfo);
-  const [cardsRequest,setCardRequest] = useState({} as ICardsResponse);
+  const [cards,setCards] = useState([] as ICardsResponse[]);
   // const [cardsInfo,setCardsInfo] = useState({} as ICardInfo);
   // const [analystsInfo,setAnalystsInfo] = useState({} as IAnalystsInfo);
 
 
   useEffect(() => {
-    axios.get<IUsers[]>('http://localhost:3001/api/users')
-    .then(res => {
-        const total = res.data.length
-        const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
-        const verificados = res.data.filter(user => user.metadatas.verified).length
+    
+    axios.get<ICardsResponse[]>('http://localhost:3001/api/cards')
+    .then(resCards => {
 
-        setUsersInfo({
-          total,
-          documentosValidados,
-          verificados
-          })
-        })
-    //   axios.get<IAnalysts[]>('http://localhost:3001/api/analysts')
-    // .then(res => {
-    //     const total = res.data.length
-    //     const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
-    //     const verificados = res.data.filter(user => user.metadatas.verified).length
+        axios.get<IUsers[]>('http://localhost:3001/api/users')
+        .then(res => {
+            const total = res.data.length
+            const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
+            const verificados = res.data.filter(user => user.metadatas.verified).length
+    
+            setUsersInfo({
+              total,
+              documentosValidados,
+              verificados
+              })
 
-    //     setAnalystsInfo({
-          
-    //       })
-    //       
+              const cards_ = resCards.data.map(card => {
+                let card_ = card  
+                res.data.map(user => {
+                      if (user.id === card.user_id) {
+                            card_.verificado = user.metadatas.verified
+                      }
+                  })
+                  return card_
+              })
+                setCards(cards_)
+
+            })
+      })    
   },[])
+
+  const rows =  cards.filter((card, i) => i < 3 )
+  .map(card => 
+      [
+      card.metadatas.name,
+      card.createdAt,
+      (card.verificado ? <ImCheckmark /> : <IoMdCloseCircle /> ),
+      card.status
+      ])
 
   return(
       <Container>
@@ -128,11 +148,7 @@ const HomePage: React.FC = () => {
                       'Verificado',
                       'Status'
                     ]} 
-                    rows={[
-                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany'],
-                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany'],
-                      ['Alfreds Futterkiste',	'Maria Anders',	'Germany',	'Germany']
-                    ]}
+                    rows={rows}
                     />
                   </div>
               </div>
