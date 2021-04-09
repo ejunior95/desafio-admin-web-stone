@@ -5,7 +5,7 @@ import SideMenu from '../../components/SideMenu';
 const AnalystsPage: React.FC = () => {
   return (
       <Container>
-         
+        
       </Container>
   );
 }

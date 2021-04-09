@@ -13,8 +13,8 @@ import {
   import { AnalystContext } from './context/AnalystContext';
 import SideMenu from './components/SideMenu';
 
-export const Routes: React.FC = () => {
 
+export const Routes: React.FC = () => {
   const { isLogado } = useContext(AnalystContext);
   if (!isLogado) {
     return(
