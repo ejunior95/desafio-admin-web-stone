@@ -16,22 +16,14 @@ import { AnalystContext } from '../../context/AnalystContext';
 const SideMenu: React.FC = () => {
 
   const {encerrarSessao} = useContext(AnalystContext);
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(true);
 
   const location = useLocation()
   const path = location.pathname
 
   function ToggleMenu() {
-
-    if (toggleMenu === false) {
-        setToggleMenu(true)
-    } else {
-        setToggleMenu(false)
-    }
-
+    setToggleMenu(!toggleMenu)
   }
-  
-  console.log(toggleMenu)
 
   return(
       <Container>
@@ -51,7 +43,8 @@ const SideMenu: React.FC = () => {
             
             </div>
 
-          <Header>
+          <Header className={toggleMenu ? '' : 'inactive-menu'}>
+
             <ul>
               
               <Link to="/home" className="link">
@@ -75,9 +68,10 @@ const SideMenu: React.FC = () => {
             
             </ul>
             
-            <div className="container-copyright">
-                <p className="copyright">Desenvolvido com <FaHeart className="logo-copyright" /> por Edvaldo de Ramos Junior</p>
-            </div>
+                <div className="container-copyright">
+                    <p className="copyright">Desenvolvido com <FaHeart className="logo-copyright" /> por Edvaldo de Ramos Junior</p>
+                </div>
+
           </Header>
 
       </Container>

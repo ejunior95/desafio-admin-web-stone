@@ -1,6 +1,9 @@
 # dependencies
 node_modules
 
+#development
+/yarn-error.log
+
 # production
 /build
 

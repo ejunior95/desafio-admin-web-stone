@@ -1,12 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
+import axios from 'axios';
+import DataGrid from '../../components/DataGrid';
 import { Container } from './styles';
 import { FaUserCircle } from "react-icons/fa";
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
 import { AnalystContext } from '../../context/AnalystContext';
-import SideMenu from '../../components/SideMenu';
-import axios from 'axios';
-import DataGrid from '../../components/DataGrid';
 import { ImCheckmark } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
 import { format, parseISO } from 'date-fns';
