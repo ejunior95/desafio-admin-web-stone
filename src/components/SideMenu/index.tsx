@@ -16,7 +16,7 @@ import { AnalystContext } from '../../context/AnalystContext';
 const SideMenu: React.FC = () => {
 
   const {encerrarSessao} = useContext(AnalystContext);
-  const [toggleMenu, setToggleMenu] = useState(true);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const location = useLocation()
   const path = location.pathname
@@ -47,19 +47,19 @@ const SideMenu: React.FC = () => {
 
             <ul>
               
-              <Link to="/home" className="link">
+              <Link to="/home" className="link" onClick={ToggleMenu}>
               <li className={path === '/home' ? 'active' : 'inactive'}><MdDashboard /> Página inicial</li>
               </Link>
-              <Link to="/users" className="link">
+              <Link to="/users" className="link" onClick={ToggleMenu}>
                 <li className={path === '/users' ? 'active' : 'inactive'}><RiGroupLine /> Visualizar base de usuários</li>
               </Link>
-              <Link to="/analysts" className="link">
+              <Link to="/analysts" className="link" onClick={ToggleMenu}>
                 <li className={path === '/analysts' ? 'active' : 'inactive'}><RiUserSettingsLine /> Visualizar analistas</li>
               </Link>
-              <Link to="/cards" className="link">
+              <Link to="/cards" className="link" onClick={ToggleMenu}>
                 <li className={path === '/cards' ? 'active' : 'inactive'}><BsCreditCard /> Visualizar pedidos de cartão</li>
               </Link>
-              <Link to ="/audits" className="link">
+              <Link to ="/audits" className="link" onClick={ToggleMenu}>
                 <li className={path === '/audits' ? 'active' : 'inactive'}><AiOutlineAudit /> Visualizar auditorias </li>
               </Link>
               <Link to="/login" className="link" onClick={encerrarSessao}>
