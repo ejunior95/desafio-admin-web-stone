@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Container, Header} from './styles';
 import { GiStoneBlock } from "react-icons/gi";
@@ -12,14 +12,26 @@ import { FiMenu } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
 import { IoMdExit } from "react-icons/io";
 import { AnalystContext } from '../../context/AnalystContext';
-import { useState } from 'react';
 
 const SideMenu: React.FC = () => {
 
   const {encerrarSessao} = useContext(AnalystContext);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   const location = useLocation()
   const path = location.pathname
+
+  function ToggleMenu() {
+
+    if (toggleMenu === false) {
+        setToggleMenu(true)
+    } else {
+        setToggleMenu(false)
+    }
+
+  }
+  
+  console.log(toggleMenu)
 
   return(
       <Container>
@@ -30,8 +42,11 @@ const SideMenu: React.FC = () => {
                 <GiStoneBlock className="logo" />
               <h2 className="text-logo">Rock</h2>
 
-              <div className="botao-expandir-retrai-menu">
-                <MdClose  className="botao-expandir-retrai-menu-icone"/>
+              <div className="botao-expandir-retrai-menu" onClick={ToggleMenu}>
+                {toggleMenu
+                  ? <MdClose  className="botao-expandir-retrai-menu-icone"/>
+                  : <FiMenu  className="botao-expandir-retrai-menu-icone"/>
+                }
               </div>
             
             </div>

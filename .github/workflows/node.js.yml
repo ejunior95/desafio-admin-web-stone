@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12
-        # with:
-        #   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-        #   heroku_app_name: "nome-do-meu-app"
-        #   heroku_email: "meu-email"
+         with:
+           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+           heroku_app_name: "sistema-de-gestao-cred-rock"
+           heroku_email: "e.junior95@gmail.com"

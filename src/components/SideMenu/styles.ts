@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
+/* Media query para exibição desktop */
+
 @media(min-width: 1025px) {
     .container-topo {
     position: fixed;
@@ -27,6 +30,9 @@ export const Container = styled.div`
     display: none;
   }
   }
+
+/* Media query para exibição em aparelhos mobile (tablet e celular) */
+
   @media(max-width: 1024px) {
 
     .container-topo {
