@@ -28,16 +28,16 @@ const SideMenu: React.FC = () => {
   return(
       <Container>
             
-            <div className="container-topo">
+            <div className={toggleMenu ? 'container-topo-active' : 'container-topo-inactive'}>
 
-              <h2 className="text-logo">Cred</h2>
-                <GiStoneBlock className="logo" />
-              <h2 className="text-logo">Rock</h2>
+              <h2 className={toggleMenu ? 'text-logo-active' : 'text-logo-inactive'}>Cred</h2>
+                <GiStoneBlock className={toggleMenu ? 'logo-active' : 'logo-inactive'} />
+              <h2 className={toggleMenu ? 'text-logo-active' : 'text-logo-inactive'}>Rock</h2>
 
-              <div className="botao-expandir-retrai-menu" onClick={ToggleMenu}>
+              <div className={toggleMenu ? 'botao-expandir-retrai-menu-active' : 'botao-expandir-retrai-menu-inactive'} onClick={ToggleMenu}>
                 {toggleMenu
-                  ? <MdClose  className="botao-expandir-retrai-menu-icone"/>
-                  : <FiMenu  className="botao-expandir-retrai-menu-icone"/>
+                  ? <MdClose  className="botao-retrai-menu-icone"/>
+                  : <FiMenu  className="botao-expandir-menu-icone"/>
                 }
               </div>
             

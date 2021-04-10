@@ -5,7 +5,8 @@ export const Container = styled.div`
 /* Media query para exibição em desktops */
 
 @media(min-width: 1025px) {
-    .container-topo {
+    .container-topo-active,
+    .container-topo-inactive {
     position: fixed;
     left: 3%;
     top: 1%;
@@ -15,18 +16,21 @@ export const Container = styled.div`
     justify-content: center;
     z-index: 1;
   }
-  .logo {
+  .logo-active,
+  .logo-inactive {
     font-size: 50px;
     color: #000000;
   }
-  .text-logo {
+  .text-logo-active,
+  .text-logo-inactive {
     color: #000000;
     padding: 10px;
   }
   .botao-expandir-retrai-menu {
     display: none;
   }
-  .botao-expandir-retrai-menu-icone {
+  .botao-retrai-menu-icone,
+  .botao-expandir-menu-icone {
     display: none;
   }
   }
@@ -35,25 +39,51 @@ export const Container = styled.div`
 
   @media(max-width: 1024px) {
 
-    .container-topo {
+  .container-topo-active {
     height: 10%;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     position:fixed;
-    top: 3%;
+    top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
     z-index: 1;
+    background-color: #ffffff;
+    transition: .5s ease-in-out;
   }
-  .logo {
+  .container-topo-inactive {
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    z-index: 1;
+    background-color: #000000;
+    transition: .5s ease-in-out;
+  }
+  .logo-active {
     font-size: 50px;
     color: #000000;
   }
-  .text-logo {
+  .logo-inactive {
+    font-size: 50px;
+    color: #ffffff;
+  }
+  .text-logo-active {
     color: #000000;
     padding: 10px;
   }
-  .botao-expandir-retrai-menu {
+  .text-logo-inactive {
+    color: #ffffff;
+    padding: 10px;
+  }
+  .botao-expandir-retrai-menu-active {
     position: absolute;
     right: 5%;
     top: 25%;
@@ -65,9 +95,27 @@ export const Container = styled.div`
     padding: 10px;
     cursor: pointer;
   }
-  .botao-expandir-retrai-menu-icone {
+  .botao-expandir-retrai-menu-inactive {
+    position: absolute;
+    right: 5%;
+    top: 25%;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .botao-retrai-menu-icone {
     font-size: 20px;
     display:flex;
+    color: #000000;
+  }
+  .botao-expandir-menu-icone {
+    font-size: 20px;
+    display:flex;
+    color: #ffffff;
   }
   }
 `;
@@ -79,6 +127,8 @@ display:flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
+
+/* Media query para exibição em desktops */
 
 @media(min-width: 1025px) {
   height: 100%;
@@ -137,7 +187,9 @@ justify-content: space-between;
   }
 }
 
-@media(max-width: 1024px) {
+ /* Media query para exibição mobile (tablet e celular) */
+
+ @media(max-width: 1024px) {
   height: 100%;
   width: 100%;
   position: fixed;
