@@ -49,8 +49,9 @@ export const Container = styled.div`
     border-radius: 10px;
   }
   .bloco-info-users {
-    width: 40%;
+    width: 45%;
     height: 50%;
+    margin-left: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,7 +60,7 @@ export const Container = styled.div`
     font-size: 50px;
   }
   .bloco-info-analysts {
-    width: 60%;
+    width: 45%;
     height: 50%;
     display: flex;
     align-items: center;
@@ -145,7 +146,7 @@ export const Container = styled.div`
     right: 0;
     top: 0;
     width: 90%;
-    margin-top: 20%;
+    margin-top: 25%;
     margin-right: 5%;
     z-index: -1;
   }
@@ -173,7 +174,7 @@ export const Container = styled.div`
     border-radius: 10px;
   }
   .bloco-info-users {
-    width: 40%;
+    width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
@@ -183,7 +184,7 @@ export const Container = styled.div`
     font-size: 50px;
   }
   .bloco-info-analysts {
-    width: 60%;
+    width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
@@ -194,8 +195,8 @@ export const Container = styled.div`
     height: 50%;
   }
   .container-grid-cards {
-    width: 80%;
-    margin-left: 10%;
+    font-size: 10px;
+    width: 100%;
   }
   .logo-users {
     font-size: 150px;
@@ -217,7 +218,7 @@ export const Container = styled.div`
     color: #ffffff;
   }
   .logo-user {
-    font-size: 500%;
+    font-size: 300%;
     color: #ffffff;
     margin-right: 20px;
   }
@@ -225,6 +226,9 @@ export const Container = styled.div`
     text-align: right;
     color: #ffffff;
     padding-right: 10px;
+  }
+  .container-info-user h1 {
+    font-size: 25px;
   }
   .container-roles {
     display: center;

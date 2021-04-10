@@ -196,7 +196,8 @@ justify-content: space-between;
   
 
   &.inactive-menu {
-    position: absolute;
+    height: 100%;
+    position: fixed;
     transform: translateX(-100%);
   }
 

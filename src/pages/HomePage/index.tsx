@@ -95,7 +95,9 @@ const HomePage: React.FC = () => {
       [
       card.metadatas.name,
       format(parseISO(card.createdAt),'dd/MM/yy - HH:mm'),
-      (card.verificado ? <ImCheckmark /> : <IoMdCloseCircle /> ),
+      <span style={{width: '100%', display: 'flex', justifyContent: 'center'}}>
+        {card.verificado ? <ImCheckmark /> : <IoMdCloseCircle />}
+      </span>,
       card.status
       ])
 
@@ -152,6 +154,7 @@ const HomePage: React.FC = () => {
                   </div>
               </div>
               </div>
+
             </div>
 
       </Container>
