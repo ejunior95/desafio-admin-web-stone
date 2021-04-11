@@ -50,17 +50,16 @@ export const Container = styled.div`
     right: 0;
     top: 0;
     width: 95%;
-    margin-top: 45%;
+    margin-top: 65%;
     margin-right: 2%;
-    height: 95vh;
     z-index: -1;
   }
   
   .bloco-detalhes-info {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 23%;
     width: 100%;
+    height: 50vh;
     border: 1px solid #30363D;
     border-radius: 10px;
   }
