@@ -20,12 +20,34 @@ export const Container = styled.div`
   
     .bloco-detalhes-info {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 23%;
     height: 100%;
     width: 100%;
     border: 1px solid #30363D;
     border-radius: 10px;
+    }
+
+    .container-text-detalhes-info {
+      width: 50%;
+      height: 100%;
+      color: #ffffff;
+    }
+
+    .nome-detalhes-info {
+      font-size: 300%;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+    .email-detalhes-info {
+      margin-left: 22px;
+    }
+    .data-nascimento-detalhes-info {
+      margin-left: 22px;
+    }
+    .salario-base-detalhes-info {
+      margin-left: 22px;
     }
 }
 
