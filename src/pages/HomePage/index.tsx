@@ -1,15 +1,18 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, {
+   useContext, 
+   useState, 
+   useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { AnalystContext } from '../../context/AnalystContext';
+import { format, parseISO } from 'date-fns';
+import { Container } from './styles';
 import axios from 'axios';
 import DataGrid from '../../components/DataGrid';
-import { Container } from './styles';
-import { FaUserCircle } from "react-icons/fa";
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
-import { AnalystContext } from '../../context/AnalystContext';
 import { ImCheckmark } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
-import { format, parseISO } from 'date-fns';
-import { useHistory, useLocation } from 'react-router-dom';
+import BannerInfoUser from '../../components/BannerInfoUser';
 
   interface IUsers {
     id: number;
@@ -19,9 +22,7 @@ import { useHistory, useLocation } from 'react-router-dom';
         verified: boolean
         }
       }
-  // interface IAnalysts {
-    
-  //     }
+  
 
   interface ICardsResponse {
         metadatas: { name: string;};
@@ -44,7 +45,6 @@ import { useHistory, useLocation } from 'react-router-dom';
   }
 
 const HomePage: React.FC = () => {
-
 
   const { analystLogado, permissoes } = useContext(AnalystContext);
   const [usersInfo,setUsersInfo] = useState({} as IUsersInfo);
@@ -104,20 +104,9 @@ const HomePage: React.FC = () => {
   return(
       <Container>
 
+            <BannerInfoUser />
             <div className="conteudo">
           
-              <div className="bloco-user-info">
-                <div className="container-info-user">
-                  <h1>{analystLogado.nome_user}</h1>
-                  <span>{analystLogado.email}</span>
-                  <div className="container-roles">
-                    {permissoes.n1 && <span className="roles n1" title="Role N1">N1</span>}
-                    {permissoes.n2 && <span className="roles n2" title="Role N2">N2</span>}
-                  </div>
-                </div>
-                <FaUserCircle className="logo-user" />
-              </div>
-
               <div className="bloco-detalhes-info">
                 
                 <div className="bloco-info-users">

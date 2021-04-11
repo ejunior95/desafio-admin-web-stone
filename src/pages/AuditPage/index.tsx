@@ -1,11 +1,14 @@
 import React from 'react';
+import BannerInfoUser from '../../components/BannerInfoUser';
 import { Container } from './styles';
-import SideMenu from '../../components/SideMenu';
 
 const AuditPage: React.FC = () => {
   return(
       <Container>
-          
+          <BannerInfoUser />
+          <div className="conteudo">
+            
+          </div>
          
       </Container>
   );
