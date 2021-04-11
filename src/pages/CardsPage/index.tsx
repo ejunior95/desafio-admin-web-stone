@@ -1,5 +1,6 @@
 import React from 'react';
 import BannerInfoUser from '../../components/BannerInfoUser';
+import Card from '../../components/Card';
 import { Container } from './styles';
 
 const CardsPage: React.FC = () => {
@@ -7,7 +8,7 @@ const CardsPage: React.FC = () => {
       <Container>
           <BannerInfoUser />
             <div className="conteudo">
-              
+              <Card />
             </div>
       </Container>
   );
