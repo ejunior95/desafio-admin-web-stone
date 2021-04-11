@@ -8,6 +8,5 @@ Tabela de conteúdos
    * [Tabela de Conteudo](#tabela-de-conteudo)
    * [Instalação](#instalacao)
    * [Como usar](#como-usar)
-      * [Pre Requisitos](#pre-requisitos)
    * [Tecnologias](#tecnologias)
 <!--te-->
