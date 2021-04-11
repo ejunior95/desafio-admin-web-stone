@@ -69,16 +69,25 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        width: 90%;
+        width: 95%;
         height: 100%;
         border-radius: 10px;
+        padding-top: 5%;
+        padding-bottom: 3%;
+        margin-top: 18%;
         margin-bottom: 5%;
-        margin-left: 5%;
+        margin-left: 2.5%;
         background-image: url(${bg_01});
         background-attachment: fixed;
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: cover;
+        }
+        
+        .logo-user {
+          font-size: 300%;
+          color: #ffffff;
+          margin-right: 20px;
         }
 
         .container-info-user {
@@ -114,10 +123,5 @@ export const Container = styled.div`
         .roles.n2.inactive {
            display: none;
         }
-        .logo-user {
-          font-size: 300%;
-          color: #ffffff;
-          margin-right: 20px;
-  }
     }
 `;
