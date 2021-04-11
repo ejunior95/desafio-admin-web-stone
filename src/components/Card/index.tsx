@@ -27,8 +27,8 @@ const Card: React.FC = () => {
                <div className="face back">
                     <div className="container-info-text">
                         <span>Data da requisição: 25/08/2018</span><br />
-                        <span>Data da última atualização: 03/10/2020</span><br /><br/>
-                        <span className="info-limite">Limite:</span><br />
+                        <span>Data da última atualização: 03/10/2020</span><br />
+                        <span className="info-limite">Limite:</span>
                         <h1>R$ 8.950,00</h1>
                     </div>
 

@@ -50,7 +50,7 @@ export const Container = styled.div`
     right: 0;
     top: 0;
     width: 95%;
-    margin-top: 28%;
+    margin-top: 45%;
     margin-right: 2%;
     height: 95vh;
     z-index: -1;

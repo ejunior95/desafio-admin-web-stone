@@ -205,11 +205,11 @@ justify-content: space-between;
       display: flex;
       flex-direction: column;
       align-items: left;
-      justify-content: space-around;
-      height: 50%;
+      justify-content: space-evenly;
+      height: 65%;
       position: absolute;
       left: 3%;
-      top: 30%;
+      top: 10%;
       width: 95%;
       text-decoration: none;
   }
@@ -242,10 +242,10 @@ justify-content: space-between;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     bottom:0;
+    left: 0;
     width: 100%;
-    height: 10%;
   }
   .copyright {
     text-align: center;
