@@ -31,25 +31,38 @@ export const Container = styled.div`
 
     .container-text-detalhes-info {
       width: 50%;
-      height: 100%;
+      height: 90%;
       color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
     }
 
+    .icone-user {
+      color: #ffffff;
+      font-size: 800%;
+    }
+    .container-nome-email {
+      width: 100%;
+    }
     .nome-detalhes-info {
       font-size: 300%;
       margin-top: 20px;
       margin-left: 20px;
+      text-align: left;
+      width: 100%;
     }
     .email-detalhes-info {
       margin-left: 22px;
+      width: 100%;
     }
     .data-nascimento-detalhes-info {
-      margin-left: 22px;
+      width: 90%;
     }
     .salario-base-detalhes-info {
-      margin-left: 22px;
+      width: 90%;
     }
-}
 
     /* Media query para exibição mobile (tablet e celular) */
 
