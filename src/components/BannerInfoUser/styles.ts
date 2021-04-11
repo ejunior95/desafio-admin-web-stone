@@ -75,7 +75,7 @@ export const Container = styled.div`
         width: 95%;
         height: 100%;
         border-radius: 10px;
-        padding-top: 10%;
+        padding-top: 15%;
         padding-bottom: 10%;
         margin-top: 15%;
         margin-bottom: 5%;

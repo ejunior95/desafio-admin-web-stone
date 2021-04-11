@@ -106,7 +106,7 @@ export const Container = styled.div`
   .bloco-detalhes-info {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 65%;
+    margin-top: 70%;
     width: 100%;
     height: 60vh;
     border: 1px solid #30363D;

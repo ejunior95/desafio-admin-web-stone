@@ -33,7 +33,7 @@ export const Container = styled.div`
 
 @media(max-width: 1024px) {
     
-    .conteudo {
+  .conteudo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,17 +42,17 @@ export const Container = styled.div`
     right: 0;
     top: 0;
     width: 95%;
-    margin-top: 28%;
     margin-right: 2%;
-    height: 95vh;
+    height: 100vh;
     z-index: -1;
   }
   
   .bloco-detalhes-info {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 23%;
+    margin-top: 70%;
     width: 100%;
+    height: 60vh;
     border: 1px solid #30363D;
     border-radius: 10px;
   }

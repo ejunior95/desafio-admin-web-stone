@@ -7,7 +7,9 @@ const AuditPage: React.FC = () => {
       <Container>
           <BannerInfoUser />
           <div className="conteudo">
-            
+              <div className="bloco-detalhes-info">
+
+              </div>
           </div>
          
       </Container>
