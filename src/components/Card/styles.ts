@@ -191,7 +191,7 @@ export const Container = styled.div`
       left: 40px;
       letter-spacing: 6px;
       font-size: 18px;
-      font-family: 'Orbitron', sans-serif !important;
+      font-family: 'Orbitron', sans-serif;
     }
     
     .nome-user-card {
@@ -373,12 +373,6 @@ export const Container = styled.div`
       left: 15px;
     }
     
-    .type-card,
-    .number-card,
-    .nome-user-card {
-      
-    }
-    
     .type-card {
       position: absolute;
       left: 15px;
@@ -393,7 +387,7 @@ export const Container = styled.div`
       left: 15px;
       letter-spacing: 3px;
       font-size: 12px;
-      font-family: 'Orbitron', sans-serif !important;
+      font-family: 'Orbitron', sans-serif;
     }
     
     .nome-user-card {
