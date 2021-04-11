@@ -15,10 +15,6 @@ export const Container = styled.div`
     .card:hover .face.front {
         transform: rotateY(180deg);
     }
-    .card .face.back {
-      background-color: #238636;
-      transform: rotateY(180deg);
-    }
     .card:hover .face.back {
       transform: rotateY(360deg);
     }
@@ -60,6 +56,93 @@ export const Container = styled.div`
     opacity: 0.7;
   }
 
+  .card .face.back {
+      background-color: #238636;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+
+    .container-info-text {
+      width: 95%;
+    }
+
+    .container-info-text-rodape {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 95%;
+    }
+    
+    .info-rodape {
+      font-size: 11px;
+    }
+
+  .container-botoes {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .botao-aprovar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #238636;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+  }
+  
+  .botao-aprovar:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    transition: .3s ease-in-out;
+  
+  .icone-botao {
+    color: #238636;
+    transition: .3s ease-in-out;
+  }
+  }
+
+  .botao-rejeitar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #238636;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+  }
+
+  .botao-rejeitar:hover {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    transition: .3s ease-in-out;
+  
+  .icone-botao {
+    color: #238636;
+    transition: .3s ease-in-out;
+  }
+  }
+
+  .icone-botao {
+    color: #ffffff;
+    font-size: 40px;
+  }
+
+  .info-limite {
+    font-size: 10px;
+  }
+
   .container-logo {
     position: absolute;
     right: 40px;
@@ -68,6 +151,7 @@ export const Container = styled.div`
     align-items: center;
     justify-content: flex-end;
   }
+
   .logo {
     font-size: 30px;
     color: #ffffff;
@@ -80,7 +164,7 @@ export const Container = styled.div`
   .chip {
       font-size: 100px;
       position: absolute;
-      top: 60px;
+      top: 65px;
       left: 50px;
   }
 
@@ -95,6 +179,7 @@ export const Container = styled.div`
        left: 40px;
        top: 32px;
        font-style: italic;
+       font-size: 23px;
    }
 
    .number-card {

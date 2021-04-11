@@ -9,7 +9,6 @@ const CardsPage: React.FC = () => {
           <BannerInfoUser />
           <div className="conteudo">
             <div className="bloco-detalhes-info">
-              <h2 className="titulo">Pedidos de cartões</h2>
               <Card />
             </div>
           </div>
