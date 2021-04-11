@@ -18,6 +18,7 @@ export const Container = styled.div`
   td {
       padding-left: 10px;
   }
+
   tr:nth-child(even) {
   background-color: #2f3640;
 }

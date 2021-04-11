@@ -1,5 +1,6 @@
 import React from 'react';
 import BannerInfoUser from '../../components/BannerInfoUser';
+import TimeLine from '../../components/TimeLine';
 import { Container } from './styles';
 
 const AuditPage: React.FC = () => {
@@ -8,7 +9,7 @@ const AuditPage: React.FC = () => {
           <BannerInfoUser />
           <div className="conteudo">
               <div className="bloco-detalhes-info">
-
+                <TimeLine />
               </div>
           </div>
          
