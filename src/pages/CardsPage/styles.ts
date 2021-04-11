@@ -14,20 +14,27 @@ export const Container = styled.div`
     top: 0;
     width: 70%;
     margin-right: 2%;
-    padding-top: 20%;
-    height: 95vh;
+    height: 110vh;
     z-index: -1;
     }
   
     .bloco-detalhes-info {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     margin-top: 23%;
+    padding-top: 6vh;
+    padding-bottom: 6vh;
     height: 100%;
     width: 100%;
     border: 1px solid #30363D;
     border-radius: 10px;
-    }
+  }
+
+  .titulo {
+    color: #ffffff;
+  }
 }
 
     /* Media query para exibição mobile (tablet e celular) */

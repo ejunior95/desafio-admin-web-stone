@@ -7,9 +7,12 @@ const CardsPage: React.FC = () => {
   return (
       <Container>
           <BannerInfoUser />
-            <div className="conteudo">
+          <div className="conteudo">
+            <div className="bloco-detalhes-info">
+              <h2 className="titulo">Pedidos de cartões</h2>
               <Card />
             </div>
+          </div>
       </Container>
   );
 }

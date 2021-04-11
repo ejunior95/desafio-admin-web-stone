@@ -15,12 +15,12 @@ export const ToastMessage: React.FC<IProps> = (props:IProps) => {
         type,
         text
     } = props
-  
+    
     return(
       <Container>
           <div className={type}>
-            {type === 'sucesso' && <RiCloseCircleFill className="icone"/>}
-            {type === 'erro' && <FaCheckCircle className="icone"/>}
+            {type === 'sucesso' && <FaCheckCircle className="icone"/>}
+            {type === 'erro' && <RiCloseCircleFill className="icone"/>}
             {type === 'alerta' && <IoMdAlert className="icone" />}
             <h1>{text}</h1>
           </div>
