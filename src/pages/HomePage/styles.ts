@@ -98,17 +98,17 @@ export const Container = styled.div`
     right: 0;
     top: 0;
     width: 95%;
-    margin-top: 28%;
     margin-right: 2%;
-    height: 95vh;
+    height: 100vh;
     z-index: -1;
   }
   
   .bloco-detalhes-info {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 20%;
+    margin-top: 65%;
     width: 100%;
+    height: 60vh;
     border: 1px solid #30363D;
     border-radius: 10px;
   }
@@ -138,12 +138,12 @@ export const Container = styled.div`
     width: 100%;
   }
   .logo-users {
-    font-size: 150px;
+    font-size: 120px;
     color: #ffffff;
     margin-right: 5px;
   }
   .logo-analysts {
-    font-size: 150px;
+    font-size: 120px;
     color: #ffffff;
     margin-left: 5px;
     margin-right: 5px;

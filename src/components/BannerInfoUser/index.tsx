@@ -12,7 +12,7 @@ const BannerInfoUser: React.FC = () => {
           
           <div className="bloco-user-info">
                 <div className="container-info-user">
-                  <h1>{analystLogado.nome_user}</h1>
+                  <h1 className="titulo-info-user">{analystLogado.nome_user}</h1>
                   <span>{analystLogado.email}</span>
                   <div className="container-roles">
                     {permissoes.n1 && <span className="roles n1" title="Role N1">N1</span>}

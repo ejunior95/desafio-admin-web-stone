@@ -5,6 +5,7 @@ import bg_01 from '../../assets/bg_001.png';
 export const Container = styled.div`
 
   /* Media query para exibição em desktop */
+
     @media(min-width: 1025px) {
     
         .bloco-user-info {
@@ -62,6 +63,8 @@ export const Container = styled.div`
         }
     
     }
+    
+    /* Media query para exibição mobile (tablet e celular) */
 
     @media(max-width: 1024px) {
         
@@ -72,8 +75,8 @@ export const Container = styled.div`
         width: 95%;
         height: 100%;
         border-radius: 10px;
-        padding-top: 5%;
-        padding-bottom: 5%;
+        padding-top: 10%;
+        padding-bottom: 10%;
         margin-top: 15%;
         margin-bottom: 5%;
         margin-left: 2.5%;
@@ -82,6 +85,10 @@ export const Container = styled.div`
         background-position: bottom;
         background-repeat: no-repeat;
         background-size: cover;
+        }
+
+        .bloco-user-info .titulo-info-user {
+          font-size: 110%;
         }
         
         .logo-user {
