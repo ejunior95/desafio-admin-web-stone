@@ -7,12 +7,12 @@ import { AnalystContext } from '../../context/AnalystContext';
 import { format, parseISO } from 'date-fns';
 import { Container } from './styles';
 import axios from 'axios';
+import BannerInfoUser from '../../components/BannerInfoUser';
 import DataGrid from '../../components/DataGrid';
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
 import { ImCheckmark } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
-import BannerInfoUser from '../../components/BannerInfoUser';
 
   interface IUsers {
     id: number;

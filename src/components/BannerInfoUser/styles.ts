@@ -73,8 +73,8 @@ export const Container = styled.div`
         height: 100%;
         border-radius: 10px;
         padding-top: 5%;
-        padding-bottom: 3%;
-        margin-top: 18%;
+        padding-bottom: 5%;
+        margin-top: 15%;
         margin-bottom: 5%;
         margin-left: 2.5%;
         background-image: url(${bg_01});
