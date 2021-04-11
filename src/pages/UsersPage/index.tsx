@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaUserCircle } from 'react-icons/fa';
 import BannerInfoUser from '../../components/BannerInfoUser';
+import ListView from '../../components/ListView';
 import { Container } from './styles';
 
 const UsersPage: React.FC = () => {
@@ -8,7 +9,9 @@ const UsersPage: React.FC = () => {
       <Container>
         <BannerInfoUser />
             <div className="conteudo">
+                
                 <div className="bloco-detalhes-info">
+
                     <div className="container-text-detalhes-info">
                         <FaUserCircle className="icone-user" />
                         <div className="container-nome-email">
@@ -19,7 +22,13 @@ const UsersPage: React.FC = () => {
                         <span className="salario-base-detalhes-info">Salário base:</span>
                         <h2 className="salario-base-detalhes-info">R$ 15.623,00</h2>
                     </div>
+
+                    <div className="container-lista-users">
+                        <ListView />
+                    </div>
                 </div>
+
+
             </div>
       </Container>
   );

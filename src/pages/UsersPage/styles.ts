@@ -29,6 +29,7 @@ export const Container = styled.div`
     border-radius: 10px;
     }
 
+
     .container-text-detalhes-info {
       width: 50%;
       height: 90%;
@@ -37,6 +38,12 @@ export const Container = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
+    }
+
+    .container-lista-users {
+      width: 45%;
+      height: 90%;
+      color: #ffffff;
     }
 
     .icone-user {
