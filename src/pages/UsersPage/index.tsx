@@ -4,6 +4,7 @@ import { FaUserCircle } from 'react-icons/fa';
 import BannerInfoUser from '../../components/BannerInfoUser';
 import ListView from '../../components/ListView';
 import { api } from '../../services/api';
+import { parseISO } from 'date-fns';
 
 interface IUsers {
     id: number;
@@ -26,6 +27,14 @@ interface IUsers {
     salaryBase: number;
     }
 
+    function formataCPF(cpf : string){
+        if (!cpf) return '-'
+        //retira os caracteres indesejados...
+        cpf = cpf.replace(/[^\d]/g, "");
+      
+        //realizar a formatação...
+          return cpf.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4");
+      }
 
 const UsersPage: React.FC = () => {
 
@@ -40,7 +49,7 @@ const UsersPage: React.FC = () => {
         },[])
 
     const activeUser = users[selectedUser] || {}
-
+        
   return (
       <Container>
         <BannerInfoUser />
@@ -53,8 +62,16 @@ const UsersPage: React.FC = () => {
                             <h1 className="nome-detalhes-info">{activeUser.name}</h1>
                             <p className="email-detalhes-info">Email: {activeUser.email}</p>
                         </div>
-                        <span className="data-nascimento-detalhes-info">Data de nascimento: {activeUser.BirthDate}</span>
-                        <span className="data-nascimento-detalhes-info">Documento (CPF/RG): {activeUser.document}</span>
+                        <span className="data-nascimento-detalhes-info">Data de nascimento: 
+                            { activeUser.BirthDate ? 
+                                new Intl.DateTimeFormat('pt-BR').format(
+                                    parseISO(activeUser.BirthDate),)
+                                :
+                                '-'
+                            }
+                        </span>
+                        <span className="data-nascimento-detalhes-info">Documento (CPF/RG): {formataCPF(activeUser.document?.toString())}
+                        </span>
                         <span className="data-nascimento-detalhes-info">Endereço:</span>
                         <span className="data-nascimento-detalhes-info">Rua: {activeUser.address?.neighborhood}, {activeUser.address?.streetNumber}</span>
                         <span className="data-nascimento-detalhes-info">Recursos disponíveis: {activeUser.enabledFeatures} </span>
@@ -63,7 +80,10 @@ const UsersPage: React.FC = () => {
                         <span className="data-nascimento-detalhes-info">{activeUser.address?.city}, {activeUser.address?.state}</span>
                         <span className="data-nascimento-detalhes-info">CEP: {activeUser.address?.postalCode}</span>
                         <span className="salario-base-detalhes-info">Salário base:</span>
-                        <h2 className="salario-base-detalhes-info">{activeUser.salaryBase}</h2>
+                        <h2 className="salario-base-detalhes-info">
+                            {new Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL',
+                            }).format(activeUser.salaryBase)}
+                        </h2>
                     </div>
 
                     <div className="container-lista-users">

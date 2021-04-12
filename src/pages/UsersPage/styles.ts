@@ -66,6 +66,7 @@ export const Container = styled.div`
       text-overflow: ellipsis;
       white-space: nowrap;
       }
+      
     .email-detalhes-info {
       margin-left: 22px;
       max-width: 400px;
