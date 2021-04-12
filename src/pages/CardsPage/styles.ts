@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     /* Media query para exibição em desktops */
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
     
     @media(min-width: 1025px) {
     .conteudo {

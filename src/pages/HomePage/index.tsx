@@ -70,7 +70,7 @@ const HomePage: React.FC = () => {
       history.push('/home')
       return
     }
-
+    
     api.get<IAnalyst[]>('analysts')
     .then(res => {
         const totais = res.data.reduce((acc, analyst) => {

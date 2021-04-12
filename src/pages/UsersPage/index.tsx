@@ -63,7 +63,7 @@ const UsersPage: React.FC = () => {
                             <p className="email-detalhes-info">Email: {activeUser.email}</p>
                         </div>
                         <span className="data-nascimento-detalhes-info">Data de nascimento: 
-                            { activeUser.BirthDate ? 
+                            {activeUser.BirthDate ? 
                                 new Intl.DateTimeFormat('pt-BR').format(
                                     parseISO(activeUser.BirthDate),)
                                 :
