@@ -23,7 +23,6 @@ import {api} from '../../services/api'
         }
       }
   
-
   interface ICardsResponse {
         metadatas: { name: string;};
         createdAt: string;
@@ -38,19 +37,28 @@ import {api} from '../../services/api'
     verificados: number
   }
 
-  interface IAnalystsInfo {
-    total: number,
-    totalN1: number;
-    totalN2: number
+  interface IAnalyst {
+    id: number;
+    user_id: number;
+    nome_user?: string;
+    email: string;
+    password: string;
+    roles: string[];
   }
+
+    interface IAnalystsInfo {
+      total: number,
+      totalN1: number;
+      totalN2: number
+    }
 
 const HomePage: React.FC = () => {
 
   const { analystLogado, permissoes } = useContext(AnalystContext);
+
   const [usersInfo,setUsersInfo] = useState({} as IUsersInfo);
+  const [analystsInfo,setAnalystsInfo] = useState({} as IAnalystsInfo);
   const [cards,setCards] = useState([] as ICardsResponse[]);
-  // const [cardsInfo,setCardsInfo] = useState({} as ICardInfo);
-  // const [analystsInfo,setAnalystsInfo] = useState({} as IAnalystsInfo);
 
   const history = useHistory()
   const location = useLocation()
@@ -58,12 +66,30 @@ const HomePage: React.FC = () => {
     
     // Redireciona o usuário para a página, caso haja um erro na digitação da url
  
-    if (location.pathname !== '/home') history.push('/home')
+    if (location.pathname !== '/home') {
+      history.push('/home')
+      return
+    }
 
-    api.get<ICardsResponse[]>('http://localhost:3001/api/cards')
+    api.get<IAnalyst[]>('analysts')
+    .then(res => {
+        const totais = res.data.reduce((acc, analyst) => {
+          acc.total += 1
+          acc.totalN1 += (analyst.roles.filter(role => role === 'n1').length)
+          acc.totalN2 += (analyst.roles.filter(role => role === 'n2').length)
+          return acc;
+        }, {
+          totalN1: 0,
+          totalN2: 0,
+          total: 0,
+        });
+        setAnalystsInfo(totais)
+      })
+
+    api.get<ICardsResponse[]>('cards')
     .then(resCards => {
 
-        api.get<IUsers[]>('http://localhost:3001/api/users')
+        api.get<IUsers[]>('users')
         .then(res => {
             const total = res.data.length
             const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length
@@ -123,9 +149,9 @@ const HomePage: React.FC = () => {
                     <RiUserSettingsLine className="logo-analysts" />
                     <div className="container-detalhes-users">
                         <h2>Analistas</h2>
-                        <h1>03</h1>
-                        <span>Nivel de acesso N1: 2</span><br />
-                        <span>Nivel de acesso N2: 2</span>
+                        <h1>{analystsInfo.total}</h1>
+                        <span>Nivel de acesso N1: {analystsInfo.totalN1}</span><br />
+                        <span>Nivel de acesso N2: {analystsInfo.totalN2}</span>
                     </div>
                 </div>
                 <div className="bloco-info-cards">

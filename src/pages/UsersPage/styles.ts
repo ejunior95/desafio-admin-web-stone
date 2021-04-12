@@ -32,16 +32,16 @@ export const Container = styled.div`
 
     .container-text-detalhes-info {
       width: 50%;
-      height: 90%;
+      height: 100%;
       color: #ffffff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content: center;
     }
 
     .container-lista-users {
-      width: 45%;
+      width: 48%;
       height: 90%;
       color: #ffffff;
     }
@@ -55,15 +55,25 @@ export const Container = styled.div`
     }
     .nome-detalhes-info {
       font-size: 300%;
-      margin-top: 20px;
-      margin-left: 20px;
+      padding-left: 20px;
+      padding-bottom:5px;
       text-align: left;
-      width: 100%;
-    }
+      width: 90%;
+      border-radius: 0px 10px 10px 0px;
+      background-color: #238636;
+      max-width: 15ch;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      }
     .email-detalhes-info {
       margin-left: 22px;
-      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
+
     .data-nascimento-detalhes-info {
       width: 90%;
     }

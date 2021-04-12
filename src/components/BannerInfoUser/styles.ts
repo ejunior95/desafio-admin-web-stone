@@ -36,6 +36,12 @@ export const Container = styled.div`
           color: #ffffff;
           padding-right: 10px;
         }
+        .titulo-info-user {
+          max-width: 80%fit-content;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
         .container-roles {
           display: center;
           align-items: center;
