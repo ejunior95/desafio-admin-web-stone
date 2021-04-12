@@ -66,10 +66,9 @@ export const Container = styled.div`
       text-overflow: ellipsis;
       white-space: nowrap;
       }
-      
     .email-detalhes-info {
       margin-left: 22px;
-      max-width: 400px;
+      max-width: 200px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -81,33 +80,88 @@ export const Container = styled.div`
     .salario-base-detalhes-info {
       width: 90%;
     }
-
-    /* Media query para exibição mobile (tablet e celular) */
-
-    @media(max-width: 1024px) {
-    
-      .conteudo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 95%;
-    margin-right: 2%;
-    height: 100vh;
-    z-index: -1;
   }
   
-  .bloco-detalhes-info {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 70%;
-    width: 100%;
-    height: 60vh;
-    border: 1px solid #30363D;
-    border-radius: 10px;
+      /* Media query para exibição mobile (tablet e celular) */
+  
+      @media(max-width: 1024px) {
+      
+        .conteudo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 95%;
+      margin-right: 2%;
+      height: 200vh;
+      z-index: -1;
+    }
+    
+    .bloco-detalhes-info {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 70%;
+      width: 100%;
+      height: 100%;
+      border: 1px solid #30363D;
+      border-radius: 10px;
+    }
+  
+    
+    .container-text-detalhes-info {
+        width: 100%;
+        height: 50%;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      .container-lista-users {
+        padding-top: 20px;
+        width: 100%;
+        height: 50%;
+        color: #ffffff;
+      }
+  
+      .icone-user {
+        color: #ffffff;
+        font-size: 800%;
+      }
+      .container-nome-email {
+        width: 100%;
+      }
+      .nome-detalhes-info {
+        font-size: 300%;
+        padding-left: 20px;
+        padding-bottom:5px;
+        text-align: left;
+        width: 90%;
+        border-radius: 0px 10px 10px 0px;
+        background-color: #238636;
+        max-width: 15ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        }
+      .email-detalhes-info {
+        margin-left: 22px;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+  
+      .data-nascimento-detalhes-info {
+        width: 90%;
+      }
+      .salario-base-detalhes-info {
+        width: 90%;
+      }
+  
   }
-}
 `;

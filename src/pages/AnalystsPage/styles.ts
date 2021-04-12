@@ -34,7 +34,6 @@ export const Container = styled.div`
 
 @media(max-width: 1024px) {
     
-    
   .conteudo {
     display: flex;
     flex-direction: column;

@@ -63,5 +63,9 @@ export const Container = styled.div`
     border: 1px solid #30363D;
     border-radius: 10px;
   }
+
+  .titulo {
+    color: #ffffff;
+  }
 }
 `;
