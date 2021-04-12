@@ -10,3 +10,7 @@ Conteúdos:
    * [Como usar](#como-usar)
    * [Tecnologias](#tecnologias)
 <!--te-->
+
+<h3 id="Sobre">Sobre</h3>
+
+No dia 25/03/2021, me foi passado pelo time de recrutamento da Stone (uma das empresas que mais admiro, atualmente) um desafio para desenvolver uma aplicação Front-end em React TS, foi muito dificil mas consegui realizar o que foi solicitado, e o resultado se encontra nesse repositório!
