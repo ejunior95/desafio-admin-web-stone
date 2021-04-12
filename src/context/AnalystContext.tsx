@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useContext } from 'react';
 import {createContext, ReactNode, useState} from 'react';
 import { ToastContext } from './ToastContext';
+import {api} from '../services/api';
   
   interface IUser {
     id: number;
@@ -41,23 +42,15 @@ export function AnalystProvider({
   const [analystLogado, setAnalystLogado] = useState({} as IAnalyst)
   const { showToastMessage } = useContext(ToastContext);
 
-  const url =
-  process.env.NODE_ENV === "production"
-    ? "/api"
-    : "http://localhost:3001/api";
-    useEffect(() => {
-        const analystLogado_ = localStorage.getItem('@SistemaCredRock/analystlogado')
-        if (!analystLogado_) return 
-        setAnalystLogado(JSON.parse(analystLogado_))
-    },[])
+  useEffect(() => {
+      const analystLogado_ = localStorage.getItem('@SistemaCredRock/analystlogado')
+      if (!analystLogado_) return 
+      setAnalystLogado(JSON.parse(analystLogado_))
+  },[])
 
     async function recuperarNome(user_id: number) {
         let res
-        try {
-         res = await axios.get<IUser[]>(`${url}/users`)
-        } catch (error) {
-         return ''    
-        }
+        res = await api.get<IUser[]>('users')
         const nomeEncontrado =  res.data.filter(user => user.id === user_id)
         return nomeEncontrado[0]?.name
     }
@@ -65,7 +58,7 @@ export function AnalystProvider({
     async function validarLogin(email:string, senha:string) {
         let res
         try {
-           res = await axios.get<IAnalyst[]>(`${url}/analysts`)
+           res = await api.get<IAnalyst[]>('analysts')
           } catch (error) {
             showToastMessage('erro',"Erro na comunicação com o servidor!")
             //<ToastMessage type={'erro'} text={"Não foi possível realizar o login!"} />
