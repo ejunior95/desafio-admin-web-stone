@@ -50,6 +50,7 @@ const CardsPage: React.FC = () => {
           <BannerInfoUser />
           <div className="conteudo">
             <div className="bloco-detalhes-info">
+              <h1 className="titulo">Clique no cartão para obter mais informações</h1>
               <Card card={card} onChangeStatus={handleChangeStatus} />
             </div>
           </div>

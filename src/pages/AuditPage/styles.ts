@@ -14,7 +14,7 @@ export const Container = styled.div`
     top: 0;
     width: 70%;
     margin-right: 2%;
-    height: 150vh;
+    height: 250vh;
     z-index: -1;
     }
     
@@ -52,7 +52,7 @@ export const Container = styled.div`
     flex-wrap: wrap;
     margin-top: 70%;
     width: 100%;
-    height: 60vh;
+    height: 350vh;
     border: 1px solid #30363D;
     border-radius: 10px;
   }

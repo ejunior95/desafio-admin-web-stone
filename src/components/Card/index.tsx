@@ -56,8 +56,7 @@ const Card = (props:IProps) => {
                                     parseISO(card.createdAt),)
                                 :
                                 '-'
-                            }
-                             {}</span><br />
+                            }</span><br />
                         <span>Data da última atualização: {card.updatedAt}</span><br />
                         <span className="info-limite">Limite:</span>
                         <h1>

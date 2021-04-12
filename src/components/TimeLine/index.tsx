@@ -1,3 +1,4 @@
+import { parseISO } from 'date-fns';
 import React from 'react';
 import { Container } from './styles';
 
@@ -47,7 +48,14 @@ const TimeLine = (props:IProps) => {
                       <p>Status: {audit.after.status}</p>
                   </div>
                   <div className="time">
-                      <h4>{audit.createdAt}</h4>
+                  <h4>
+                      {audit.createdAt ? 
+                                new Intl.DateTimeFormat('pt-BR').format(
+                                    parseISO(audit.createdAt),)
+                                :
+                                '-'
+                      }
+                      </h4>
                   </div>
               </li>
               <li>
@@ -57,7 +65,14 @@ const TimeLine = (props:IProps) => {
                       <p>Status: {audit.before.status}</p>
                   </div>
                   <div className="time">
-                      <h4>{audit.createdAt}</h4>
+                      <h4>
+                      {audit.createdAt ? 
+                                new Intl.DateTimeFormat('pt-BR').format(
+                                    parseISO(audit.createdAt),)
+                                :
+                                '-'
+                      }
+                      </h4>
                   </div>
               </li>
               </>
