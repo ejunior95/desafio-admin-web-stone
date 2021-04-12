@@ -6,13 +6,13 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { AnalystContext } from '../../context/AnalystContext';
 import { format, parseISO } from 'date-fns';
 import { Container } from './styles';
-import axios from 'axios';
 import BannerInfoUser from '../../components/BannerInfoUser';
 import DataGrid from '../../components/DataGrid';
 import { RiGroupLine } from "react-icons/ri";
 import { RiUserSettingsLine } from "react-icons/ri";
 import { ImCheckmark } from "react-icons/im";
 import { IoMdCloseCircle } from "react-icons/io";
+import {api} from '../../services/api'
 
   interface IUsers {
     id: number;
@@ -60,10 +60,10 @@ const HomePage: React.FC = () => {
  
     if (location.pathname !== '/home') history.push('/home')
 
-    axios.get<ICardsResponse[]>('http://localhost:3001/api/cards')
+    api.get<ICardsResponse[]>('http://localhost:3001/api/cards')
     .then(resCards => {
 
-        axios.get<IUsers[]>('http://localhost:3001/api/users')
+        api.get<IUsers[]>('http://localhost:3001/api/users')
         .then(res => {
             const total = res.data.length
             const documentosValidados = res.data.filter(user => user.metadatas.validDocument).length

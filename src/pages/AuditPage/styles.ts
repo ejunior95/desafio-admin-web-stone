@@ -14,7 +14,7 @@ export const Container = styled.div`
     top: 0;
     width: 70%;
     margin-right: 2%;
-    height: 95vh;
+    height: 150vh;
     z-index: -1;
     }
     
