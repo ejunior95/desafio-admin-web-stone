@@ -43,7 +43,9 @@ const TimeLine = (props:IProps) => {
               <>
               <li>
                   <div className="content">
-                      <h3>{audit.type}</h3>
+                      <h3>
+                        {audit.type}
+                        </h3>
                       <p><strong>DEPOIS</strong></p>
                       <p>Status: {audit.after.status}</p>
                   </div>

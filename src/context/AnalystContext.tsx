@@ -4,6 +4,7 @@ import {createContext, ReactNode, useState} from 'react';
 import { ToastContext } from './ToastContext';
 import {api} from '../services/api';
   
+
   interface IUser {
     id: number;
     name: string;
@@ -40,6 +41,7 @@ export function AnalystProvider({
   }: IProviderProps) {
     
   const [analystLogado, setAnalystLogado] = useState({} as IAnalyst)
+
   const { showToastMessage } = useContext(ToastContext);
 
   useEffect(() => {
@@ -47,12 +49,13 @@ export function AnalystProvider({
       if (!analystLogado_) return 
       setAnalystLogado(JSON.parse(analystLogado_))
   },[])
-
+    //Poderia ser usado o metodo find, pq ele já retorna o primeiro valor encontrado
+    //Vai ser feito uma requisição com o parametro id 
     async function recuperarNome(user_id: number) {
         let res
-        res = await api.get<IUser[]>('users')
-        const nomeEncontrado =  res.data.filter(user => user.id === user_id)
-        return nomeEncontrado[0]?.name
+        res = await api.get<IUser>(`users/${user_id}`)
+        const nomeEncontrado =  res.data.name
+        return nomeEncontrado
     }
 
     async function validarLogin(email:string, senha:string) {
@@ -75,6 +78,11 @@ export function AnalystProvider({
             return 
             // <ToastMessage type={'erro'} text={"Não foi possível realizar o login!"} />
         }
+        //Usado spread operator
+        // Object.assign(
+        //objeto1,
+        //objeto2
+        //)
         const nome_user = await recuperarNome(logado.user_id)
         const analista = {
             ...logado,

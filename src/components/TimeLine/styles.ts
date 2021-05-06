@@ -93,7 +93,7 @@ export const Container = styled.div`
   ul li:nth-child(odd) .time {
       position: absolute;
       top: 12px;
-      right: -200px;
+      right: -150px;
       margin: 0;
       padding: 8px 16px;
       background-color: #238636;
@@ -103,7 +103,7 @@ export const Container = styled.div`
   ul li:nth-child(even) .time {
       position: absolute;
       top: 12px;
-      left: -200px;
+      left: -150px;
       margin: 0;
       padding: 8px 16px;
       background-color: #238636;

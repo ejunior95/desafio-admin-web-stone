@@ -75,8 +75,8 @@ const HomePage: React.FC = () => {
     .then(res => {
         const totais = res.data.reduce((acc, analyst) => {
           acc.total += 1
-          acc.totalN1 += (analyst.roles.filter(role => role === 'n1').length)
-          acc.totalN2 += (analyst.roles.filter(role => role === 'n2').length)
+          acc.totalN1 += (analyst.roles.filter(role => role === 'n1').length) > 0 ? 1 : 0
+          acc.totalN2 += (analyst.roles.filter(role => role === 'n2').length) > 0 ? 1 : 0
           return acc;
         }, {
           totalN1: 0,
